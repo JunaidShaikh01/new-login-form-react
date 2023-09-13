@@ -1,0 +1,16 @@
+.homeContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.subHomeContainer {
+  margin-top: 3rem;
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 15px;
+  height: 40vh;
+}

@@ -1,0 +1,45 @@
+.loginContainer {
+  width: 100;
+  display: flex;
+  justify-content: center;
+}
+
+.subLoginContainer {
+  margin-top: 3rem;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 15px;
+  padding: 2rem;
+}
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+.control label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.control input {
+  font-size: 1.1rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+}
+.control input:focus {
+  outline: none;
+  border: 1px solid black;
+  border-color: #4f005f;
+  background: #f6dbfc;
+}
+.control.invalid input {
+  border-color: red;
+  background: #fbdada;
+}
+.action {
+  text-align: center;
+}
