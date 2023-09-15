@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Login.css";
 import Button from "../UI/Button/Button";
 import { useState } from "react";
@@ -8,18 +8,29 @@ export default function Login(props) {
   const [enteredPassword, setEnteredPasword] = useState("");
   const [passwordValid, setPasswordvalid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+  useEffect(() => {
+    const logged = setTimeout(() => {
+      console.log("Form validation");
+      setFormIsValid(
+        enteredEmail.includes("@") && enteredPassword.trim().length > 6
+      );
+    }, 500);
+
+    return () => {
+      console.log("CleanUp");
+      clearTimeout(logged);
+    };
+  }, [enteredEmail, enteredPassword]);
+
   function emailChangeHandler(event) {
     setEnteredEmail(event.target.value);
-    setFormIsValid(
-      event.target.value.includes("@") && enteredPassword.trim().length > 6
-    );
   }
 
   function passwordChangeHandler(event) {
     setEnteredPasword(event.target.value);
-    setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes("@")
-    );
+    // setFormIsValid(
+    //   event.target.value.trim().length > 6 && enteredEmail.includes("@")
+    // );
   }
 
   function validateEmailHandler() {
